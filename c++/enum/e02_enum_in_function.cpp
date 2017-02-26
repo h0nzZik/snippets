@@ -8,13 +8,6 @@ int foo()
 	};
 }
 
-int bar(enum {A,B} f)
-{
+// Cannot do this
+int bar(enum {A,B} f) {}
 
-	
-}
-
-int main()
-{
-	;
-}
