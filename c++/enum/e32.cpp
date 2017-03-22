@@ -10,3 +10,4 @@ constexpr E e3 = E(3);
 constexpr E e4 = E(4);
 
 static_assert(int(e4) == 4, "But why?");
+
