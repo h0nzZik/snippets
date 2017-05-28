@@ -55,21 +55,11 @@ class PointerType : public Type {
 		}
 
 		virtual void print_pre(std::ostream & o) const override {
-#if 0
-			nested_type->print_pre(o);
-			bool const p = precedence() < nested_type->precedence();
-			if (p)
-				o << "(*)";
-			else
-				o << "*";
-			nested_type->print_post(o);
-#endif
 			nested_type->print_pre(o);
 			bool const p = precedence() < nested_type->precedence();
 			if (p)
 				o << "(";
 			o << "*";
-
 		}
 
 		virtual void print_post(std::ostream & o) const override {
@@ -78,7 +68,6 @@ class PointerType : public Type {
 				o << ")";
 			nested_type->print_post(o);
 		}
-
 
 		Precedence precedence() const override {
 			return Precedence::Pointer;
